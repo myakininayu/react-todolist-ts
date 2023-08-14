@@ -22,10 +22,11 @@ function App() {
   }
 
   function addTask(title: string) {
-    let newTask: TasksType = { 
-      id: v1(), 
-      title: title, 
-      isDone: false };
+    let newTask: TasksType = {
+      id: v1(),
+      title: title,
+      isDone: false
+    };
     let newTasks = [newTask, ...tasks];
     setTasks(newTasks);
   }
@@ -34,9 +35,9 @@ function App() {
     setFilter(filter);
   }
 
-  function changeStatus(id:string, isDone: boolean) {
-    let task = tasks.find((t)=>t.id === id);
-    task!.isDone=isDone;
+  function changeStatus(id: string, isDone: boolean) {
+    let task = tasks.find((t) => t.id === id);
+    task!.isDone = isDone;
     setTasks([...tasks]);
   }
 
@@ -52,6 +53,7 @@ function App() {
       <Todolist
         title='What to learn'
         tasks={filteredTasks}
+        filter={filter}
         addTask={addTask}
         removeTask={removeTask}
         changeFilter={changeFilter}
